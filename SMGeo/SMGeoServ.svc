@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SMGeo.SMGeoServ" CodeBehind="SMGeoServ.svc.cs" %>
