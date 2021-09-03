@@ -92,7 +92,7 @@ namespace SMGeo
                             CityData cd = FromDataRowToObj<CityData>(dr);
                             cd.CountryData = FromDataRowToObj<CountryData>(dr);
                             cd.StateRegionData = FromDataRowToObj<StateRegionData>(dr);
-
+                            lst.Add(cd);
                         }
                     }
                 }
@@ -213,7 +213,7 @@ namespace SMGeo
             try
             {
                 lst = new List<StateRegionData>();
-                ds = Utilities.GetDataSetbySQL(GetConnection(), String.Format("SELECT [StateRegionAcr] as StateAcr,[Country_ref],[State_region] as State_region,[StateRegionID] as StateID FROM[geo].[vwStatesRegions] WHERE Country_ref={0} ORDER BY State_region ", IDCountry));
+                ds = Utilities.GetDataSetbySQL(GetConnection(), String.Format("SELECT StateAcr,[Country_ref], State_region,StateID FROM [geo].[vwStatesRegions] WHERE Country_ref={0} ORDER BY State_region", IDCountry));
                 if (IsDataSetValid(ds))
                 {
 
@@ -870,8 +870,8 @@ namespace SMGeo
                 cqd = new CityQueryData();
                 cqd.PlaceName = "Mos";
                 cqd.PlaceSQLOperator = "STARTS";
-                cqd.StateID = 5;
-                cqd.StateIDLogOperator = "OR";
+                cqd.CountryID = 5;
+                cqd.CountryIDLogOperator = "OR";
                 testRez = false;
                 lstCD = SearchCities(cqd);
                 if (lstCD != null &&

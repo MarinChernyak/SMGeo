@@ -58,19 +58,19 @@ namespace SMGeo
         /// <Tests>
         /// /////////////////////////////////////////
         /// 
-        //[OperationContract]
-        //bool TestSaveDeleteCityStateCountry();
+        [OperationContract]
+        bool TestSaveDeleteCityStateCountry();
 
         //-----   -----  SELECT  -----  ------
-        //[OperationContract]
-        //bool TestSearchStates();
-        //[OperationContract]
-        //bool TestGetCitiesCollection();
-        //[OperationContract]
-        //bool TestGetCountriesCollection();
-        //[OperationContract]
-        //bool TestGetStatesList();
-        //[OperationContract]
-        //bool TestSearchCities();
+        [OperationContract]
+        bool TestSearchStates();
+        [OperationContract]
+        bool TestGetCitiesCollection();
+        [OperationContract]
+        bool TestGetCountriesCollection();
+        [OperationContract]
+        bool TestGetStatesList();
+        [OperationContract]
+        bool TestSearchCities();
     }
 }
